@@ -1,5 +1,4 @@
-# spark-phoenix-dynamic
-enable dynamic upsert to phoenix in Spark
+# Enable dynamic columns in spark-phoenix
 
 ## Phoenix dynamic feature
 Given a table created with primary keys as well as some fixed common columns, we want to add dynamic columns in Spark.
@@ -38,6 +37,20 @@ The upsert sql will be set into `Configuration` and later be used by `PhoenixRec
 
 To make `saveToPhoenix` work for RDD, we also need to specify number of fields in the RDD, which is 5 in the example.
 
+Query:
+```
+0: jdbc:phoenix:localhost> select * from EVENTLOG(maxMemory BIGINT, usedMemory BIGINT) where maxMemory is not null;
++----------+--------------------------+------------+------------+-------------+
+| EVENTID  |        EVENTTIME         | EVENTTYPE  | MAXMEMORY  | USEDMEMORY  |
++----------+--------------------------+------------+------------+-------------+
+| 1017     | 2018-01-01 12:00:00.000  | t1         | 1          | 1024        |
+| 1027     | 2018-01-01 12:00:00.000  | t2         | 2          | 2048        |
+| 1037     | 2018-01-01 12:00:00.000  | t3         | 3          | 4096        |
++----------+--------------------------+------------+------------+-------------+
+3 rows selected (0.066 seconds)
+
+```
+
 ## Enable DataFrame dynamic (example in `TestDf`)
 When creating a DataFrame, we need to specify data type of each field at the first place. In the example, the raw input
 is of Json type, where each field is with a primary data type.
@@ -66,6 +79,20 @@ val sql = "UPSERT  INTO EventLog (EVENTID, EVENTTIME, EVENTTYPE, name CHAR(30), 
  VALUES (?, ?, ?, ?, ?, ?)"
 ```
 
+Query:
+
+```
+0: jdbc:phoenix:localhost> select * from EVENTLOG(name CHAR(30), birth time, age BIGINT) where name is not null;
++----------+--------------------------+------------+----------+--------------------------+-------+
+| EVENTID  |        EVENTTIME         | EVENTTYPE  |   NAME   |          BIRTH           |  AGE  |
++----------+--------------------------+------------+----------+--------------------------+-------+
+| 21       | 2018-02-01 04:00:00.000  | tp         | Michael  |                          | null  |
+| 22       | 2018-02-01 04:00:00.000  | tp         | Andy     | 2018-01-01 04:00:00.000  | 10    |
+| 23       | 2018-02-01 04:00:00.000  | tp         | Justin   | 2018-01-01 05:00:00.000  | null  |
++----------+--------------------------+------------+----------+--------------------------+-------+
+3 rows selected (0.082 seconds)
+
+```
 ## Notes
 These two Functions are hacked, and they are not robust.
 There are several parts must be handled at user side:
