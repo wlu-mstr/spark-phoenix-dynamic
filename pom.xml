@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>test</groupId>
+    <artifactId>test</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <repositories>
+        <repository>
+            <id>cloudera</id>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+        </repository>
+        <repository>
+            <id>mvn</id>
+            <url>https://mvnrepository.com/artifact</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.10.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-compiler</artifactId>
+            <version>2.10.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-reflect</artifactId>
+            <version>2.10.6</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.scala-lang</groupId>-->
+        <!--<artifactId>scalap</artifactId>-->
+        <!--<version>2.10.6</version>-->
+        <!--</dependency>-->
+
+
+        <!--<dependency>-->
+        <!--<groupId>org.apache.hbase</groupId>-->
+        <!--<artifactId>hbase-client</artifactId>-->
+        <!--<version>1.0.0-cdh5.5.1</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.apache.phoenix</groupId>-->
+        <!--<artifactId>phoenix-spark</artifactId>-->
+        <!--<version>4.13.1-HBase-1.3</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+        <!--<groupId>org.xerial.snappy</groupId>-->
+        <!--<artifactId>snappy-java</artifactId>-->
+        <!--<version>1.0.5</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.10</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.phoenix/phoenix-spark -->
+        <dependency>
+            <groupId>org.apache.phoenix</groupId>
+            <artifactId>phoenix-spark</artifactId>
+            <version>4.7.0-HBase-1.1</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_2.10</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
+        <!--<dependency>-->
+        <!--<groupId>org.apache.spark</groupId>-->
+        <!--<artifactId>spark-yarn_2.10</artifactId>-->
+        <!--<version>1.5.0-cdh5.5.1</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+        <!--<groupId>org.apache.spark</groupId>-->
+        <!--<artifactId>spark-streaming-kafka_2.10</artifactId>-->
+        <!--<version>1.5.0-cdh5.5.1</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+        <!--<groupId>org.apache.spark</groupId>-->
+        <!--<artifactId>spark-streaming_2.10</artifactId>-->
+        <!--<version>1.5.0-cdh5.5.1</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.apache.spark</groupId>-->
+        <!--<artifactId>spark-sql_2.10</artifactId>-->
+        <!--<version>1.5.0-cdh5.5.1</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.apache.spark</groupId>-->
+        <!--<artifactId>spark-mllib_2.10</artifactId>-->
+        <!--<version>1.5.0-cdh5.5.1</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.apache.spark</groupId>-->
+        <!--<artifactId>spark-graphx_2.10</artifactId>-->
+        <!--<version>1.5.0-cdh5.5.1</version>-->
+        <!--</dependency>-->
+
+
+        <!--<dependency>-->
+        <!--<groupId>org.scalanlp</groupId>-->
+        <!--<artifactId>breeze_2.10</artifactId>-->
+        <!--<version>0.11.2</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+        <!--<groupId>org.scalanlp</groupId>-->
+        <!--<artifactId>breeze-macros_2.10</artifactId>-->
+        <!--<version>0.11.2</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+        <!--<groupId>org.scalanlp</groupId>-->
+        <!--<artifactId>breeze-natives_2.10</artifactId>-->
+        <!--<version>0.11.2</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.apache.flume.flume-ng-sources/flume-kafka-source &ndash;&gt;-->
+        <!--<dependency>-->
+        <!--<groupId>org.apache.flume.flume-ng-sources</groupId>-->
+        <!--<artifactId>flume-kafka-source</artifactId>-->
+        <!--<version>1.6.0-cdh5.5.1</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+        <!--<groupId>org.apache.flume.flume-ng-sources</groupId>-->
+        <!--<artifactId>flume-file-source</artifactId>-->
+        <!--<version>1.6.0-cdh5.5.1</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+        <!--<groupId>org.apache.flume.flume-ng-sinks</groupId>-->
+        <!--<artifactId>flume-ng-kafka-sink</artifactId>-->
+        <!--<version>1.6.0-cdh5.5.1</version>-->
+        <!--</dependency>-->
+
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.drools/drools-core &ndash;&gt;-->
+        <!--<dependency>-->
+        <!--<groupId>org.drools</groupId>-->
+        <!--<artifactId>drools-core</artifactId>-->
+        <!--<version>5.4.0.Final</version>-->
+        <!--</dependency>-->
+
+
+    </dependencies>
+
+</project>
